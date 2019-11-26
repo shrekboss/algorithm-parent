@@ -10,7 +10,7 @@ package org.crayzer.algorithm.linkedlist;
  **/
 public class SinglyLinkedList {
 
-    private Node head = null;
+    public static Node head = null;
 
     public Node findByValue(int value) {
         Node p = head;
@@ -60,6 +60,8 @@ public class SinglyLinkedList {
                 p = p.next;
             }
 
+            // p.next = newNode;
+            // 等价下面两行
             newNode.next = p.next;
             p.next = newNode;
         }
@@ -71,7 +73,12 @@ public class SinglyLinkedList {
     }
 
     public void insertAfter(Node p, Node newNode) {
-        if (p == null || head == null) {
+        if (p == null) {
+            return;
+        }
+
+        if (p.next == null) {
+            insertToTail(newNode);
             return;
         }
 
@@ -85,7 +92,7 @@ public class SinglyLinkedList {
     }
 
     public void insertBefore(Node p, Node newNode) {
-        if (p == null || head == null) {
+        if (p == null) {
             return;
         }
 
@@ -104,7 +111,7 @@ public class SinglyLinkedList {
     }
 
     public void deleteByNode(Node p) {
-        if (head == null || p == null) {
+        if (p == null) {
             return;
         }
 
@@ -114,8 +121,12 @@ public class SinglyLinkedList {
         }
 
         Node q = head;
-        while (q.next != p) {
+        while (q != null && q.next != p) {
             q = q.next;
+        }
+
+        if (q == null) {
+            return;
         }
 
         q.next = q.next.next;
@@ -157,7 +168,7 @@ public class SinglyLinkedList {
     }
 
     public Node createNode(int value) {
-        return new Node(value);
+        return new Node(value, null);
     }
 
     public void printAll() {
@@ -169,13 +180,13 @@ public class SinglyLinkedList {
         System.out.println();
     }
 
-    private class Node {
-        private int data;
-        private Node next;
+    public static class Node {
+        public int data;
+        public Node next;
 
-        public Node(int data) {
+        public Node(int data, Node next) {
             this.data = data;
-            this.next = null;
+            this.next = next;
         }
     }
 
@@ -201,6 +212,16 @@ public class SinglyLinkedList {
     public static void main(String[] args) {
 
         SinglyLinkedList link = new SinglyLinkedList();
+
+        // int data[] = {1,2,5,3,1};
+        //
+        // for(int i =0; i < data.length; i++){
+        //     // link.insertToHead(data[i]);
+        //     link.insertToTail(data[i]);
+        // }
+        // link.printAll();
+        // System.out.println();
+
         link.insertToHead(1);
         link.printAll();
         link.deleteByNode(link.findByValue(1));
