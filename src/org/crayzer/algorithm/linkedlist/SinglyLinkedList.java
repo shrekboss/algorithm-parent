@@ -138,11 +138,21 @@ public class SinglyLinkedList {
         }
 
         if (isRepeat) {
-            if (head.data == value) {
+
+            //创建一个虚拟头结点
+            // Node dummyNode = createNode(value - 1);
+            // dummyNode.next = head;
+            // Node p = dummyNode;
+
+            while (head != null && head.data == value) {
                 head = head.next;
             }
 
+            if (head == null) {
+                return;
+            }
             Node p = head;
+
             while (p.next != null) {
                 if (p.next.data == value) {
                     p.next = p.next.next;
@@ -154,7 +164,7 @@ public class SinglyLinkedList {
             Node p = head;
             Node q = null;
 
-            while (p.data != value) {
+            while (p != null & p.data != value) {
                 q = p;
                 p = p.next;
             }
