@@ -26,3 +26,6 @@ hs_err_pid*
 
 algorithm-practice.iml
 out/production/algorithm-practice/META-INF/
+src/org/crayzer/algorithm/stack/
+src/org/crayzer/leetcode/
+
