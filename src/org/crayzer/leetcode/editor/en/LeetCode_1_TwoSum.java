@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum_1 {
+public class LeetCode_1_TwoSum {
 
     class Solution3 {
         public int[] twoSum(int[] nums, int target) {

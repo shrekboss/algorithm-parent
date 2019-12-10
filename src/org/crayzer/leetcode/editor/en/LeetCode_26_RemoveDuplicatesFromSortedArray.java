@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en;
 
-public class RemoveDuplicatesFromSortedArray_26 {
+public class LeetCode_26_RemoveDuplicatesFromSortedArray {
 
     /**
      * 游标
@@ -41,20 +41,20 @@ public class RemoveDuplicatesFromSortedArray_26 {
         }
     }
 
-    class Solution1 {
-        public int removeDuplicates(int[] nums) {
-            if (nums == null || nums.length == 0) {
-                return 0;
-            }
-
-            int i = 0;
-            for (int j = 1; j < nums.length; j++) {
-                if (nums[i] != nums[j]) {
-                    nums[i++] = nums[j];
-                }
-            }
-            return i + 1;
-        }
-    }
+    // class Solution1 {
+    //     public int removeDuplicates(int[] nums) {
+    //         if (nums == null || nums.length == 0) {
+    //             return 0;
+    //         }
+    //
+    //         int i = 0;
+    //         for (int j = 1; j < nums.length; j++) {
+    //             if (nums[i] != nums[j]) {
+    //                 nums[i++] = nums[j];
+    //             }
+    //         }
+    //         return i + 1;
+    //     }
+    // }
 
 }
