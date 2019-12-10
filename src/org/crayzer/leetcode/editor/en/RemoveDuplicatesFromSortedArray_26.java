@@ -2,6 +2,25 @@ package org.crayzer.leetcode.editor.en;
 
 public class RemoveDuplicatesFromSortedArray_26 {
 
+    /**
+     * 游标
+     */
+    class Solutions2 {
+        public int removeDuplicates(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return 0;
+            }
+
+            int cursor = 1;
+            for (int i = 1; i < nums.length; i++) {
+                if (nums[i - 1] != nums[i]) {
+                    nums[cursor++] = nums[i];
+                }
+            }
+            return cursor;
+        }
+    }
+
     class Solution12 {
         public int removeDuplicates(int[] nums) {
             if (nums == null || nums.length == 0) {
