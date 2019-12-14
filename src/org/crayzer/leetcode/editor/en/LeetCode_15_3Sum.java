@@ -46,7 +46,9 @@ public class LeetCode_15_3Sum {
                     for (int k = j + 1; k < nums.length; k++) {
                         if (nums[i] + nums[j] + nums[k] == 0) {
                             List<Integer> subResult = new ArrayList<>();
+                            /** 最小值 */
                             int a = (nums[i] < nums[j] ? nums[i] : nums[j]) < nums[k] ? (nums[i] < nums[j] ? nums[i] : nums[j]) : nums[k];
+                            /** 最大值 */
                             int b = (nums[i] > nums[j] ? nums[i] : nums[j]) > nums[k] ? (nums[i] > nums[j] ? nums[i] : nums[j]) : nums[k];
                             int c = 0 - a - b;
                             subResult.add(a);
