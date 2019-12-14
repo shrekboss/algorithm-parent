@@ -13,13 +13,14 @@ public class LeetCode_1_TwoSum {
             }
 
             int[] sortedOfOriginal = Arrays.copyOf(nums, nums.length);
-            Arrays.sort(nums);// O(nlogn)
+            Arrays.sort(sortedOfOriginal);// O(nlogn)
 
             int val_0 = 0, val_1 = 0;
             int start = 0, end = sortedOfOriginal.length - 1;
+            int sum;
 
             while (start < end) {
-                int sum = sortedOfOriginal[start] + sortedOfOriginal[end];
+                sum = sortedOfOriginal[start] + sortedOfOriginal[end];
                 if (sum < target) {
                     start++;
                 } else if (sum > target) {
