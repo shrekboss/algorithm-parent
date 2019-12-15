@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en;
+package org.crayzer.leetcode.editor.en.list;
 
 public class LeetCode_21_MergeTwoSortedLists {
      class ListNode {

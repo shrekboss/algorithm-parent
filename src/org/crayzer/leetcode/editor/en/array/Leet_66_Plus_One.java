@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en;
+package org.crayzer.leetcode.editor.en.array;
 
 public class Leet_66_Plus_One {
     public int[] plusOne(int[] digits) {

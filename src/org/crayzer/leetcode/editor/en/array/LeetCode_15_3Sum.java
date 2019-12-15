@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en;
+package org.crayzer.leetcode.editor.en.array;
 
 import java.util.*;
 
