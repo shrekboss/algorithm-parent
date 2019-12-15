@@ -3,7 +3,7 @@ package org.crayzer.leetcode.editor.en.list;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LeetCode_141_Linked_List_Cycle {
+public class LeetCode_141_LinkedListCycle {
 
     class ListNode {
         int val;
