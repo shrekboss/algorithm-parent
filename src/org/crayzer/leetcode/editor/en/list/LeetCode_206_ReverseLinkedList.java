@@ -16,7 +16,7 @@ public class LeetCode_206_ReverseLinkedList {
             ListNode cur = head;
             ListNode tmp;
 
-            while (cur != head) {
+            while (cur != null) {
                 tmp = cur.next;
                 cur.next = prev;
                 prev = cur;
