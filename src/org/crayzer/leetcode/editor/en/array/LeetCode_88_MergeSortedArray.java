@@ -2,7 +2,7 @@ package org.crayzer.leetcode.editor.en.array;
 
 import java.util.Arrays;
 
-public class Leet_88_MergeSortedArray {
+public class LeetCode_88_MergeSortedArray {
 
     class Solution2 {
         public void merger(int[] nums1, int m, int[] nums2, int n) {
