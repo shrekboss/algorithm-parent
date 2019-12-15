@@ -7,7 +7,7 @@ public class LeetCode_189_RotateArray {
              k = k % nums.length;
 
             reverse(nums, 0, nums.length - 1);
-            reverse(nums, 0, k);
+            reverse(nums, 0, k-1);
             reverse(nums, k+1, nums.length-1);
         }
 
