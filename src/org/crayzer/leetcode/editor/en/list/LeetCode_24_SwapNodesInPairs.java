@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.list;
 
-public class Leet_24_SwapNodesInPairs {
+public class LeetCode_24_SwapNodesInPairs {
 
     class ListNode {
         int val;

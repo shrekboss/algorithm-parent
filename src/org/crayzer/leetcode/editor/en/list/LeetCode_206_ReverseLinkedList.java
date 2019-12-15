@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.list;
 
-public class Leet_206_ReverseLinkedList {
+public class LeetCode_206_ReverseLinkedList {
     class ListNode {
         int val;
         ListNode next;
