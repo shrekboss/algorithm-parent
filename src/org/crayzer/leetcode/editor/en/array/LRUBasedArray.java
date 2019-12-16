@@ -1,4 +1,4 @@
-package org.crayzer.algorithm.array;
+package org.crayzer.leetcode.editor.en.array;
 
 import java.util.HashMap;
 import java.util.Map;
