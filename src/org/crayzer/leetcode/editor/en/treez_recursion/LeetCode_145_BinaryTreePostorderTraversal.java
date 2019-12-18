@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.tree;
+package org.crayzer.leetcode.editor.en.treez_recursion;
 
 import java.util.HashSet;
 import java.util.LinkedList;
