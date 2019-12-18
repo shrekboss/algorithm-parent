@@ -20,7 +20,7 @@ public class LeetCode_144_BinaryTreePreorderTraversal {
      * 递归
      */
     class Solution3 {
-        public List<Integer> preorderTracersal(TreeNode root) {
+        public List<Integer> doPreorderTracersal(TreeNode root) {
             List<Integer> res = new LinkedList<>();
             retrieves(root, res);
             return res;
@@ -40,7 +40,7 @@ public class LeetCode_144_BinaryTreePreorderTraversal {
      */
     class Solution2 {
 
-        public List<Integer> preorderTracersal(TreeNode root) {
+        public List<Integer> doPreorderTracersal(TreeNode root) {
             LinkedList<Integer> result = new LinkedList<>();
             LinkedList<TreeNode> stack = new LinkedList<>();
 
