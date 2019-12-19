@@ -71,6 +71,9 @@ public class LeetCode_145_BinaryTreePostorderTraversal {
         }
     }
 
+    /**
+     * 递归，必须掌握
+     */
     class Solution1 {
         public List<Integer> postorderTraversal(TreeNode root) {
             List<Integer> res = new LinkedList<>();
