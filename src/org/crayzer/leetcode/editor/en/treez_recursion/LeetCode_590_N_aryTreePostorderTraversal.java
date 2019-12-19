@@ -17,9 +17,7 @@ public class LeetCode_590_N_aryTreePostorderTraversal {
                 Node curr = stack.pollLast();
                 ((LinkedList<Integer>) res).addFirst(curr.val);
 
-                for (Node n : curr.children) {
-                    stack.add(n);
-                }
+                stack.addAll(curr.children);
             }
 
             return res;
