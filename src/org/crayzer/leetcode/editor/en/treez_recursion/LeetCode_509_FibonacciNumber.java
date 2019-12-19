@@ -24,6 +24,9 @@ public class LeetCode_509_FibonacciNumber {
      */
     class Solution1 {
         public int fib(int N) {
+            if (N == 0) return 0;
+            if (N == 1) return 1;
+
             int[] arr = new int[N+1];
             arr[0] = 0;
             arr[1] = 1;
