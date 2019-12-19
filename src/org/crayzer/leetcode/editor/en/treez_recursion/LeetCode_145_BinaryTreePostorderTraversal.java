@@ -29,8 +29,8 @@ public class LeetCode_145_BinaryTreePostorderTraversal {
                 TreeNode curr = stack.pollLast();
                 res.addFirst(curr.val);
 
-                if (curr.right != null) stack.addLast(curr.right);
-                if (curr.left != null) stack.addLast(curr.left);
+                if (curr.right != null) stack.add(curr.right);
+                if (curr.left != null) stack.add(curr.left);
             }
             return res;
         }
