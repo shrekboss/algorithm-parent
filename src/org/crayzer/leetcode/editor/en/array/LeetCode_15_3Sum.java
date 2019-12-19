@@ -5,10 +5,14 @@ import java.util.*;
 public class LeetCode_15_3Sum {
     class Solution2 {
         public List<List<Integer>> threeSum(int[] nums) {
-            Arrays.sort(nums);
             List<List<Integer>> res = new ArrayList<>();
+            if (nums == null || nums.length < 3) return res;
 
-            for (int k = 0; k < nums.length - 2; k++) {
+            Arrays.sort(nums);
+            int length = nums.length;
+
+            for (int k = 0; k < length - 2; k++) {
+                /* 如果第一个数都大于 0， 则没有后续 */
                 if (nums[k] > 0) {
                     break;
                 }
@@ -16,7 +20,7 @@ public class LeetCode_15_3Sum {
                 if (k > 0 && nums[k] == nums[k - 1]) {
                     continue;
                 }
-                int i = k + 1, j = nums.length - 1;
+                int i = k + 1, j = length - 1;
                 while (i < j) {
                     int sum = nums[k] + nums[i] + nums[j];
 
@@ -41,9 +45,10 @@ public class LeetCode_15_3Sum {
             List<List<Integer>> result = new ArrayList<>();
             Set<List<Integer>> ret = new HashSet<>();
 
-            for (int i = 0; i < nums.length - 2; i++) {
-                for (int j = i + 1; j < nums.length - 1; j++) {
-                    for (int k = j + 1; k < nums.length; k++) {
+            int length = nums.length;
+            for (int i = 0; i < length - 2; i++) {
+                for (int j = i + 1; j < length - 1; j++) {
+                    for (int k = j + 1; k < length; k++) {
                         if (nums[i] + nums[j] + nums[k] == 0) {
                             List<Integer> subResult = new ArrayList<>();
                             /** 最小值 */
