@@ -6,18 +6,17 @@ import java.util.Queue;
 
 public class LeetCode_297_SerializeAndDeserializeBinaryTree {
 
-    public class Codec {
+    private final static String SEPARATOR = ",";
+    private final static String NN = "#";
 
-        private final static String SEPARATOR = ",";
-        private final static String NULL = "#";
+    class Codec {
 
-        // Encodes a tree to a single string.
         public String serialize(TreeNode root) {
             return doSerialize(root, new StringBuilder()).toString();
         }
 
         private StringBuilder doSerialize(TreeNode root, StringBuilder builder) {
-            if (root == null) builder.append(NULL).append(SEPARATOR);
+            if (root == null) builder.append(NN).append(SEPARATOR);
             else {
                 builder.append(root.val).append(SEPARATOR);
                 doSerialize(root.left, builder);
@@ -27,15 +26,13 @@ public class LeetCode_297_SerializeAndDeserializeBinaryTree {
             return builder;
         }
 
-        // Decodes your encoded data to tree.
         public TreeNode deserialize(String data) {
             return doDeserialize(new LinkedList<>(Arrays.asList(data.split(SEPARATOR))));
         }
 
         private TreeNode doDeserialize(Queue<String> dataList) {
-            /* 队列 remove 头出 */
             String root = dataList.remove();
-            if (root.equals(NULL)) return null;
+            if (root.equals(NN)) return null;
             else {
                 TreeNode node = new TreeNode(Integer.parseInt(root));
                 node.left = doDeserialize(dataList);
@@ -46,13 +43,13 @@ public class LeetCode_297_SerializeAndDeserializeBinaryTree {
         }
     }
 
-    public class TreeNode {
+    class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
+        public TreeNode(int val) {
+            this.val = val;
         }
     }
 }
