@@ -6,10 +6,10 @@ import java.util.Queue;
 
 public class LeetCode_297_SerializeAndDeserializeBinaryTree {
 
-    private final static String SEPARATOR = ",";
-    private final static String NN = "#";
+    class Solution {
 
-    class Codec {
+        private final static String SEPARATOR = ",";
+        private final static String NN = "#";
 
         public String serialize(TreeNode root) {
             return doSerialize(root, new StringBuilder()).toString();
@@ -47,9 +47,9 @@ public class LeetCode_297_SerializeAndDeserializeBinaryTree {
         int val;
         TreeNode left;
         TreeNode right;
-
         public TreeNode(int val) {
             this.val = val;
         }
     }
+
 }
