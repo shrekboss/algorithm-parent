@@ -42,7 +42,7 @@ public class LeetCode_18_4Sum {
                         } else if (curr > target) {
                             while (j < h && nums[h] == nums[--h]);
                         } else {
-                            res.add(new LinkedList<>(Arrays.asList(nums[k], nums[i], nums[j], nums[h])));
+                            res.add(Arrays.asList(nums[k], nums[i], nums[j], nums[h]));
                             while (j < h && nums[j] == nums[++j]);
                             while (j < h && nums[h] == nums[--h]);
                         }
