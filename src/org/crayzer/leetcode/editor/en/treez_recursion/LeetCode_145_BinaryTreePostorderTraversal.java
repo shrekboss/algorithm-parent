@@ -1,9 +1,6 @@
 package org.crayzer.leetcode.editor.en.treez_recursion;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class LeetCode_145_BinaryTreePostorderTraversal {
 
@@ -17,20 +14,66 @@ public class LeetCode_145_BinaryTreePostorderTraversal {
         }
     }
 
+    class Solution5 {
+        public List<Integer> postorderTraversal(TreeNode root) {
+            List<Integer> res = new LinkedList<>();
+            Stack<TreeNode> stack = new Stack<>();
+
+            if (root == null) return res;
+            stack.push(root);
+
+            while (!stack.isEmpty()) {
+                TreeNode cur = stack.pop();
+                res.add(cur.val);
+
+                if (cur.left != null) stack.push(cur.left);
+                if (cur.right != null) stack.push(cur.right);
+            }
+            Collections.reverse(res);
+            return res;
+        }
+    }
+
+    class Solution4 {
+        public List<Integer> postorderTraversal(TreeNode root) {
+            List<Integer> res = new LinkedList<>();
+            Stack<TreeNode> stack = new Stack<>();
+
+            TreeNode cur = root;
+            TreeNode last = null;
+
+            while (cur != null || !stack.isEmpty()) {
+                if (cur != null) {
+                    stack.push(cur);
+                    cur = cur.left;
+                } else {
+                    TreeNode temp = stack.peek();
+                    if (temp.right != null && temp.right != last) {
+                        cur = temp.right;
+                    } else {
+                        res.add(temp.val);
+                        last = temp;
+                        stack.pop();
+                    }
+                }
+            }
+            return res;
+        }
+    }
+
     class Solution3 {
         public List<Integer> postorderTraversal(TreeNode root) {
             LinkedList<Integer> res = new LinkedList<>();
             LinkedList<TreeNode> stack = new LinkedList<>();
 
             if (root == null) return res;
-
             stack.addLast(root);
             while (!stack.isEmpty()) {
-                TreeNode curr = stack.pollLast();
-                res.addFirst(curr.val);
+                TreeNode cur = stack.pollLast();
+                res.addFirst(cur.val);
 
-                if (curr.right != null) stack.add(curr.right);
-                if (curr.left != null) stack.add(curr.left);
+                if (cur.left != null) stack.addLast(cur.left);
+                if (cur.right != null) stack.addLast(cur.right);
             }
             return res;
         }
