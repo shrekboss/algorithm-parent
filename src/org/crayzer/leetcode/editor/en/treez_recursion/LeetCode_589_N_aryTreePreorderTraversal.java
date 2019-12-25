@@ -9,22 +9,21 @@ public class LeetCode_589_N_aryTreePreorderTraversal {
     class Solution1 {
         public List<Integer> preorder(Node root) {
             List<Integer> res = new LinkedList<>();
-            LinkedList<Node> stack = new LinkedList<>();
-
             if (root == null) return res;
 
-            stack.add(root);
-            while (!stack.isEmpty()) {
-                Node node = stack.pollLast();
-                res.add(node.val);
+            LinkedList<Node> stack = new LinkedList<>();
+            stack.addLast(root);
 
-                Collections.reverse(node.children);
-                stack.addAll(node.children);
+            while (!stack.isEmpty()) {
+                Node cur = stack.pollLast();
+                res.add(cur.val);
+
+                Collections.reverse(cur.children);
+                stack.addAll(cur.children);
 
                 /* 如下操作错误 */
                 // for (Node n : node.children) stack.offerFirst(n);
             }
-
             return res;
         }
     }
