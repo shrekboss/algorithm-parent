@@ -40,14 +40,12 @@ public class LeetCode_429_N_aryTreeLevelOrderTraversal {
         private List<List<Integer>> res = new ArrayList<>();
 
         public List<List<Integer>> levelOrder(Node root) {
-            dfs(root, 0);
+            if (root != null) dfs(root, 0);
             return res;
         }
 
         private void dfs(Node root, int depth) {
-            if (root == null) return;
-
-            if (depth + 1 > res.size()) res.add(new ArrayList<>());
+            if (depth >= res.size()) res.add(new ArrayList<>());
             res.get(depth).add(root.val);
 
             for (Node node : root.children) {
@@ -72,6 +70,4 @@ public class LeetCode_429_N_aryTreeLevelOrderTraversal {
             children = _children;
         }
     }
-
-    ;
 }
