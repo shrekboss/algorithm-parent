@@ -8,7 +8,7 @@ public class LeetCode_49_GroupAnagrams {
      * O(nk)
      **/
     class Solution2 {
-        public List<List<String>> groupAnagrams(String[] strs) {
+        public List<List<String>> groupAnagram(String[] strs) {
             if (strs.length == 0) return new ArrayList<>();
 
             Map<String, List<String>> ans = new HashMap<>(16);
@@ -18,17 +18,16 @@ public class LeetCode_49_GroupAnagrams {
                 Arrays.fill(counter, 0);
                 for (char c : s.toCharArray()) counter[c - 'a']++;
 
-                StringBuilder stringBuilder = new StringBuilder();
-                for (int i = 0; i < 26; i++) {
-                    stringBuilder.append("#");
-                    stringBuilder.append(counter[i]);
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < counter.length; i++) {
+                    builder.append("#");
+                    builder.append(counter[i]);
                 }
 
-                String key = stringBuilder.toString();
+                String key = builder.toString();
                 if (!ans.containsKey(key)) ans.put(key, new ArrayList<>());
                 ans.get(key).add(s);
             }
-
             return new ArrayList<>(ans.values());
         }
     }
@@ -37,20 +36,19 @@ public class LeetCode_49_GroupAnagrams {
      * O(n*k*logk)
      **/
     class Solution1 {
-        public List<List<String>> groupAnagrams(String[] strs) {
+        public List<List<String>> groupAnagram(String[] strs) {
             if (strs.length == 0) return new ArrayList<>();
 
             Map<String, List<String>> ans = new HashMap<>(16);
+
             for (String s : strs) {
                 char[] chars = s.toCharArray();
                 Arrays.sort(chars);
                 String key = String.valueOf(chars);
 
                 if (!ans.containsKey(key)) ans.put(key, new ArrayList<>());
-
                 ans.get(key).add(s);
             }
-
             return new ArrayList<>(ans.values());
         }
     }
