@@ -25,19 +25,21 @@ public class LeetCode_590_N_aryTreePostorderTraversal {
     }
 
     class Solution1 {
+        private List<Integer> res = new LinkedList<>();
+
         public List<Integer> postorder(Node root) {
-            List<Integer> res = new LinkedList<>();
-            doPostorder(root, res);
-            return res;
+            return doPostorder(root);
         }
 
-        private void doPostorder(Node root, List<Integer> res) {
-            if (root == null) return;
+        private List<Integer> doPostorder(Node root) {
+            if (root == null) return res;
 
             for (Node n : root.children) {
-                doPostorder(n, res);
+                doPostorder(n);
             }
             res.add(root.val);
+
+            return res;
         }
     }
 
