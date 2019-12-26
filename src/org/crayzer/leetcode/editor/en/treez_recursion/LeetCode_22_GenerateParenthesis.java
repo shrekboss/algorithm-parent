@@ -15,20 +15,13 @@ public class LeetCode_22_GenerateParenthesis {
         }
 
         private void generate(int left, int right, int n, String s) {
-            // terminator
-            // if (level >= max) {
             if (left == n && right == n) {
                 res.add(s);
-                // System.out.println(s);
                 return;
             }
 
-            // process current logic
-            //drill down
             if (left < n) generate(left + 1, right, n, s + "(");
             if (left > right) generate(left, right + 1, n, s + ")");
-
-            // reverse states
         }
     }
 
