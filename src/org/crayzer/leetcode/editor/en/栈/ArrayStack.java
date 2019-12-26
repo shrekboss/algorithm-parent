@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.stack;
+package org.crayzer.leetcode.editor.en.栈;
 
 public class ArrayStack {
     private String[] items;

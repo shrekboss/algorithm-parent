@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.queue;
+package org.crayzer.leetcode.editor.en.队列;
 
 /**
  * describe: 设计循环双端队列
