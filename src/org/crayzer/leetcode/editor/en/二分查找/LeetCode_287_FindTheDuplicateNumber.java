@@ -14,6 +14,8 @@ public class LeetCode_287_FindTheDuplicateNumber {
                     if (num < mid) counter++;
                 }
 
+                // 如果小于 4 的个数等于 4 或者更多
+                // 那么重复的数一定位于 1、2、3
                 if (counter >= mid) right = mid - 1;
                 else left  = mid;
             }
