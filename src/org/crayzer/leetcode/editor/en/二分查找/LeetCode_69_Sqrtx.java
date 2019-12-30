@@ -12,6 +12,7 @@ public class LeetCode_69_Sqrtx {
             while (left < right) {
                 // 注意：这里一定取右中位数，如果取左中位数，代码会进入死循环
                 // long mid = left + (right - left + 1) / 2;
+                // mid设置int类型，针对大整型测试用例通不过
                 long mid = (left + right + 1) >>> 1;
                 if (mid * mid > x) right = mid - 1;
                 else left = mid;
