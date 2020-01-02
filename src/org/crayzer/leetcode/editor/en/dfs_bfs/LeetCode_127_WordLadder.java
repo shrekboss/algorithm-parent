@@ -9,7 +9,8 @@ public class LeetCode_127_WordLadder {
     public static void main(String[] args) {
         String beginWord = "hit";
         String endWord = "cog";
-        String[] wordList = {"hot", "dot", "dog", "lot", "log", "cog"};
+        // String[] wordList = {"hot", "dot", "dog", "lot", "log", "cog"};
+        String[] wordList = {"hot", "dot", "dog", "lot", "log"};
         Solution solution = new Solution();
         System.out.println(solution.ladderLength(beginWord, endWord, Arrays.asList(wordList)));
     }
@@ -24,6 +25,10 @@ public class LeetCode_127_WordLadder {
         }
 
         public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+            if (!wordList.contains(endWord)) {
+                return 0;
+            }
+
             this.len = beginWord.length();
 
             wordList.forEach(
@@ -58,7 +63,9 @@ public class LeetCode_127_WordLadder {
             return 0;
         }
 
-        private int visitedWordNode(Queue<Pair<String, Integer>> queue, HashMap<String, Integer> visited, HashMap<String, Integer> otherVisited) {
+        private int visitedWordNode(Queue<Pair<String, Integer>> queue,
+                                    HashMap<String, Integer> visited,
+                                    HashMap<String, Integer> otherVisited) {
             Pair<String, Integer> node = queue.remove();
             String word = node.getKey();
             int level = node.getValue();
