@@ -30,9 +30,9 @@ public class LeetCode_127_WordLadder {
                     word -> {
                         for (int i = 0; i < len; i++) {
                             String newWord = word.substring(0, i) + "*" + word.substring(i + 1, len);
-                            LinkedList<String> transformationns = this.allComboDict.getOrDefault(newWord, new LinkedList());
-                            transformationns.add(word);
-                            this.allComboDict.put(newWord, transformationns);
+                            LinkedList<String> transformations = this.allComboDict.getOrDefault(newWord, new LinkedList<>());
+                            transformations.add(word);
+                            this.allComboDict.put(newWord, transformations);
                         }
                     }
             );
