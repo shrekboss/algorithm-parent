@@ -16,7 +16,35 @@ public class LeetCode103_BinaryTreeZigzagLevelOrderTraversal {
         }
     }
 
-    class Solution2 {
+    class Solution {
+        public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+            List<List<Integer>> res = new LinkedList<>();
+            if (root == null) return res;
+
+            Queue<TreeNode> track = new LinkedList<>();
+            track.offer(root);
+            int depth = 0;
+
+            while (!track.isEmpty()) {
+                int size = track.size();
+                List<Integer> level = new LinkedList<>();
+
+                for (int i = 0; i < size; i++) {
+                    TreeNode curr = track.poll();
+                    if (depth % 2 == 0) level.add(curr.val);
+                    else level.add(0, curr.val);
+
+                    if (curr.left != null) track.offer(curr.left);
+                    if (curr.right != null) track.offer(curr.right);
+                }
+                depth++;
+                res.add(new LinkedList<>(level));
+            }
+            return res;
+        }
+    }
+
+    class Solution1 {
         private List<List<Integer>> res = new LinkedList<>();
 
         public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
@@ -33,32 +61,6 @@ public class LeetCode103_BinaryTreeZigzagLevelOrderTraversal {
 
             if (root.left != null) dfs(root.left, depth + 1);
             if (root.right != null) dfs(root.right, depth + 1);
-        }
-    }
-
-    class Solution1 {
-        public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-            List<List<Integer>> res = new LinkedList<>();
-            if (root == null) return res;
-
-            Queue<TreeNode> track = new LinkedList<>();
-            track.offer(root);
-
-            while (!track.isEmpty()) {
-                int size = track.size();
-                List<Integer> level = new LinkedList<>();
-
-                for (int i = 0; i < size; i++) {
-                    TreeNode cur = track.poll();
-                    if (res.size() % 2 == 0) level.add(cur.val);
-                    else level.add(0, cur.val);
-
-                    if (cur.left != null) track.offer(cur.left);
-                    if (cur.right != null) track.offer(cur.right);
-                }
-                res.add(new LinkedList<>(level));
-            }
-            return res;
         }
     }
 }
