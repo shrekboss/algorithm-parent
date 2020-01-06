@@ -1,15 +1,8 @@
 package org.crayzer.leetcode.editor.en.list;
 
+import org.crayzer.leetcode.editor.en.ListNode;
+
 public class LeetCode_21_MergeTwoSortedLists {
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     class Solution {
         public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
             if (l1 == null) return l2;

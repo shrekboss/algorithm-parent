@@ -1,15 +1,8 @@
 package org.crayzer.leetcode.editor.en.list;
 
+import org.crayzer.leetcode.editor.en.ListNode;
+
 public class LeetCode_876_MiddleOfTheLinkedList {
-    class ListNode {
-        int val;
-        ListNode next;
-
-        public ListNode(int val) {
-            this.val = val;
-        }
-    }
-
     class Solution {
         public ListNode middleNode(ListNode head) {
             ListNode p = head;

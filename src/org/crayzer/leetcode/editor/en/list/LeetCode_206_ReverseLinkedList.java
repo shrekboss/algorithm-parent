@@ -1,15 +1,8 @@
 package org.crayzer.leetcode.editor.en.list;
 
+import org.crayzer.leetcode.editor.en.ListNode;
+
 public class LeetCode_206_ReverseLinkedList {
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     class Solution {
         public ListNode reverseList(ListNode head) {
             ListNode prev = null;
@@ -22,7 +15,6 @@ public class LeetCode_206_ReverseLinkedList {
                 prev = cur;
                 cur = tmp;
             }
-
             return prev;
         }
     }

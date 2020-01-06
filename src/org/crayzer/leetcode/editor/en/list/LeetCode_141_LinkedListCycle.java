@@ -1,18 +1,11 @@
 package org.crayzer.leetcode.editor.en.list;
 
+import org.crayzer.leetcode.editor.en.ListNode;
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class LeetCode_141_LinkedListCycle {
-
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     class Solution2 {
         public boolean hasCycle(ListNode head) {

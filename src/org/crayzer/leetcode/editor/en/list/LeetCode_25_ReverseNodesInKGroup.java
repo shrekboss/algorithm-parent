@@ -1,5 +1,7 @@
 package org.crayzer.leetcode.editor.en.list;
 
+import org.crayzer.leetcode.editor.en.ListNode;
+
 public class LeetCode_25_ReverseNodesInKGroup {
     class Solution {
         public ListNode reverseKGroup(ListNode head, int k) {
@@ -41,14 +43,6 @@ public class LeetCode_25_ReverseNodesInKGroup {
             }
 
             return pre;
-        }
-    }
-
-    class ListNode {
-        int val;
-        ListNode next;
-        public ListNode(int val) {
-            this.val = val;
         }
     }
 }

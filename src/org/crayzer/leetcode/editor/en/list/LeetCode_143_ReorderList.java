@@ -1,5 +1,7 @@
 package org.crayzer.leetcode.editor.en.list;
 
+import org.crayzer.leetcode.editor.en.ListNode;
+
 /**
  * class_name: LeetCode_143_ReorderList
  * package: org.crayzer.leetcode.editor.en.list
@@ -12,15 +14,6 @@ package org.crayzer.leetcode.editor.en.list;
  *      合并两个链表，将右链表插入到左链表，即可重新排列成：1->5->2->4->3.
  **/
 public class LeetCode_143_ReorderList {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     class Solution {
         public void reorderList(ListNode head) {
             if (head == null) return;

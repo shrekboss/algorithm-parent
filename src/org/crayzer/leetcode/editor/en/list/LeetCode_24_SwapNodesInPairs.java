@@ -1,15 +1,8 @@
 package org.crayzer.leetcode.editor.en.list;
 
+import org.crayzer.leetcode.editor.en.ListNode;
+
 public class LeetCode_24_SwapNodesInPairs {
-
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode swapPairs(ListNode head) {
         ListNode pre = new ListNode(0);

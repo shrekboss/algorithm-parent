@@ -1,15 +1,8 @@
 package org.crayzer.leetcode.editor.en.list;
 
+import org.crayzer.leetcode.editor.en.ListNode;
+
 public class LeetCode_23_MergeKSortedLists {
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     class Solution {
         public ListNode mergeKLists(ListNode[] lists) {
             int len = lists.length;
