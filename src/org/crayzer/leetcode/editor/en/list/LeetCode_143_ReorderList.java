@@ -60,17 +60,14 @@ public class LeetCode_143_ReorderList {
         }
 
         private ListNode middleNode(ListNode head) {
-            ListNode p = head;
-            ListNode q = head;
+            ListNode slow = head;
+            ListNode fast = head;
 
-            while (p.next != null && p.next.next != null) {
-                q = q.next;
-                p = p.next.next;
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
             }
-            // 如果存在两个终结点，返回左中节点
-            return q;
-            // if (p.next == null) return q;
-            // else return q.next;
+            return slow;
         }
     }
 }

@@ -3,18 +3,34 @@ package org.crayzer.leetcode.editor.en.list;
 import org.crayzer.leetcode.editor.en.ListNode;
 
 public class LeetCode_876_MiddleOfTheLinkedList {
+
     class Solution {
         public ListNode middleNode(ListNode head) {
-            ListNode p = head;
-            ListNode q = head;
+            ListNode slow = head;
+            ListNode fast = head;
 
-            while (p.next != null && p.next.next != null) {
-                q = q.next;
-                p = p.next.next;
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+            return slow;
+        }
+    }
+
+    class Solution1 {
+        public ListNode middleNode(ListNode head) {
+            if (head == null || head.next == null) return head;
+
+            ListNode slow = head;
+            ListNode fast = head;
+
+            while (fast.next != null && fast.next.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
             }
 
-            if (p.next == null) return q;
-            else return q.next;
+            if (fast.next == null) return slow;
+            else return slow.next;
         }
     }
 }
