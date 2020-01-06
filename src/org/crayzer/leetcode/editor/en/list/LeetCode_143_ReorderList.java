@@ -67,9 +67,10 @@ public class LeetCode_143_ReorderList {
                 q = q.next;
                 p = p.next.next;
             }
-
-            if (p.next == null) return q;
-            else return q.next;
+            // 如果存在两个终结点，返回左中节点
+            return q;
+            // if (p.next == null) return q;
+            // else return q.next;
         }
     }
 }
