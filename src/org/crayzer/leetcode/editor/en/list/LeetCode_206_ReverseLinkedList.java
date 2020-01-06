@@ -3,7 +3,20 @@ package org.crayzer.leetcode.editor.en.list;
 import org.crayzer.leetcode.editor.en.ListNode;
 
 public class LeetCode_206_ReverseLinkedList {
+
     class Solution {
+        public ListNode reverseList(ListNode head) {
+            if (head == null || head.next == null) {
+                return head;
+            }
+            ListNode last = reverseList(head.next);
+            head.next.next = head;
+            head.next = null;
+            return last;
+        }
+    }
+
+    class Solution1 {
         public ListNode reverseList(ListNode head) {
             ListNode prev = null;
             ListNode cur = head;
