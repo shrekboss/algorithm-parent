@@ -5,9 +5,9 @@ import org.crayzer.leetcode.editor.en.ListNode;
 public class LeetCode_24_SwapNodesInPairs {
 
     public ListNode swapPairs(ListNode head) {
-        ListNode pre = new ListNode(0);
-        pre.next = head;
-        ListNode tmp = pre;
+        ListNode soldier = new ListNode(0);
+        soldier.next = head;
+        ListNode tmp = soldier;
 
         while (tmp.next != null && tmp.next.next != null) {
             ListNode start = tmp.next;
@@ -18,6 +18,6 @@ public class LeetCode_24_SwapNodesInPairs {
             tmp = start;
         }
 
-        return pre.next;
+        return soldier.next;
     }
 }

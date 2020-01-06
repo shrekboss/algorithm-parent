@@ -31,18 +31,18 @@ public class LeetCode_25_ReverseNodesInKGroup {
         }
 
         private ListNode reverse(ListNode head) {
-            ListNode pre = null;
+            ListNode prev = null;
             ListNode cur = head;
             ListNode tmp;
 
             while (cur != null) {
                 tmp = cur.next;
-                cur.next = pre;
-                pre = cur;
+                cur.next = prev;
+                prev = cur;
                 cur = tmp;
             }
 
-            return pre;
+            return prev;
         }
     }
 }
