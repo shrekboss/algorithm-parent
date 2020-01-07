@@ -18,17 +18,16 @@ public class LeetCode_24_SwapNodesInPairs {
         public ListNode swapPairs(ListNode head) {
             ListNode soldier = new ListNode(0);
             soldier.next = head;
-            ListNode tmp = soldier;
+            ListNode temp = soldier;
 
-            while (tmp.next != null && tmp.next.next != null) {
-                ListNode start = tmp.next;
-                ListNode end = tmp.next.next;
-                tmp.next = end;
+            while (temp.next != null && temp.next.next != null) {
+                ListNode start = temp.next;
+                ListNode end = temp.next.next;
+                temp.next = end;
                 start.next = end.next;
                 end.next = start;
-                tmp = start;
+                temp = start;
             }
-
             return soldier.next;
         }
     }
