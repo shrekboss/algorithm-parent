@@ -4,7 +4,7 @@ public class LeetCode_53_MaximumSubarray {
     class Solution3 {
         public int maxSubArray(int[] nums) {
             int len = nums.length;
-            if (nums == null || len == 0) return 0;
+            if (len == 0) return 0;
 
             int[] dp = new int[len];
             dp[0] = nums[0];
