@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class LeetCode_62_UniquePaths {
     // 时间复杂度：O(m*n)
-    // 空间复杂度：O(2n)
+    // 空间复杂度：O(n)
     class Solution {
         public int uniquePaths(int m, int n) {
             int[] cur = new int[n];
