@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.二分查找;
+package org.crayzer.leetcode.editor.en.binary_search;
 
 public class LeetCode_33_SearchInRotatedSortedArray {
     class Solution {
