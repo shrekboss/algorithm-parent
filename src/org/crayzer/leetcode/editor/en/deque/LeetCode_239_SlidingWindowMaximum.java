@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.队列;
+package org.crayzer.leetcode.editor.en.deque;
 
 import java.util.ArrayDeque;
 

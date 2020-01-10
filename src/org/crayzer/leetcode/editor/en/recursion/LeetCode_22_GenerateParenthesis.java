@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.递归;
+package org.crayzer.leetcode.editor.en.recursion;
 
 import java.util.ArrayList;
 import java.util.List;

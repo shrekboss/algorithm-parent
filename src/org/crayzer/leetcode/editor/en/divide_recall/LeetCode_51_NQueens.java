@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.分治_回溯;
+package org.crayzer.leetcode.editor.en.divide_recall;
 
 import java.util.*;
 
