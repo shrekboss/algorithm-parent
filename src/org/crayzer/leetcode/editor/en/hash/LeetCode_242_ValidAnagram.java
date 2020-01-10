@@ -4,10 +4,6 @@ import java.util.Arrays;
 
 public class LeetCode_242_ValidAnagram {
 
-    public static void main(String[] args) {
-        System.out.println(123);
-    }
-
     /**
      * O(n)
      */
