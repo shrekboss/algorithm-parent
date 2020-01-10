@@ -4,12 +4,17 @@ import java.util.Arrays;
 
 public class LeetCode_242_ValidAnagram {
 
+    public static void main(String[] args) {
+        System.out.println(123);
+    }
+
     /**
      * O(n)
      */
     class Solution2 {
         public boolean isAnagrams(String s, String t) {
-            if (s.length() != t.length()) return false;
+            if (s.length() != t.length())
+                return false;
 
             int[] counter = new int[26];
             for (int i = 0; i < s.length(); i++) {
@@ -18,7 +23,8 @@ public class LeetCode_242_ValidAnagram {
             }
 
             for (int count : counter) {
-                if (count != 0) return false;
+                if (count != 0)
+                    return false;
             }
 
             return true;

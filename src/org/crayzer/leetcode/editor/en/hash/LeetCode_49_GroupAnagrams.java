@@ -9,14 +9,16 @@ public class LeetCode_49_GroupAnagrams {
      **/
     class Solution2 {
         public List<List<String>> groupAnagram(String[] strs) {
-            if (strs.length == 0) return new ArrayList<>();
+            if (strs.length == 0)
+                return new ArrayList<>();
 
             Map<String, List<String>> ans = new HashMap<>(16);
             int[] counter = new int[26];
 
             for (String s : strs) {
                 Arrays.fill(counter, 0);
-                for (char c : s.toCharArray()) counter[c - 'a']++;
+                for (char c : s.toCharArray())
+                    counter[c - 'a']++;
 
                 StringBuilder builder = new StringBuilder();
                 for (int i = 0; i < counter.length; i++) {
@@ -25,7 +27,8 @@ public class LeetCode_49_GroupAnagrams {
                 }
 
                 String key = builder.toString();
-                if (!ans.containsKey(key)) ans.put(key, new ArrayList<>());
+                if (!ans.containsKey(key))
+                    ans.put(key, new ArrayList<>());
                 ans.get(key).add(s);
             }
             return new ArrayList<>(ans.values());
@@ -37,7 +40,8 @@ public class LeetCode_49_GroupAnagrams {
      **/
     class Solution1 {
         public List<List<String>> groupAnagram(String[] strs) {
-            if (strs.length == 0) return new ArrayList<>();
+            if (strs.length == 0)
+                return new ArrayList<>();
 
             Map<String, List<String>> ans = new HashMap<>(16);
 
@@ -46,7 +50,8 @@ public class LeetCode_49_GroupAnagrams {
                 Arrays.sort(chars);
                 String key = String.valueOf(chars);
 
-                if (!ans.containsKey(key)) ans.put(key, new ArrayList<>());
+                if (!ans.containsKey(key))
+                    ans.put(key, new ArrayList<>());
                 ans.get(key).add(s);
             }
             return new ArrayList<>(ans.values());
