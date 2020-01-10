@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.树;
+package org.crayzer.leetcode.editor.en.tree;
 
 /**
  * 二叉树的最近公共祖先

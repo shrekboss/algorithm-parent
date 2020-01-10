@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.树;
+package org.crayzer.leetcode.editor.en.tree;
 
 public class LeetCode_226_InvertBinaryTree {
 
