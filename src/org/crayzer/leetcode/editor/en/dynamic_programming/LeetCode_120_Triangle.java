@@ -5,7 +5,15 @@ import java.util.List;
 public class LeetCode_120_Triangle {
     class Solution3 {
         public int minimumTriangle(List<List<Integer>> triangle) {
-            return 0;
+            int row = triangle.size();
+            int[] minLen = new int[row + 1];
+
+            for (int level = row - 1; level >= 0 ; level--) {
+                for (int i = 0; i <= level; i++) {
+                    minLen[i] = Math.min(minLen[i], minLen[i + 1]) + triangle.get(level).get(i);
+                }
+            }
+            return minLen[0];
         }
     }
 
@@ -34,7 +42,7 @@ public class LeetCode_120_Triangle {
         Integer[][] memo;
         public int minimumTotal(List<List<Integer>> triangle) {
             row = triangle.size();
-            Integer[][] memo = new Integer[row][row];
+            memo = new Integer[row][row];
             return recursion(0, 0, triangle);
         }
 
