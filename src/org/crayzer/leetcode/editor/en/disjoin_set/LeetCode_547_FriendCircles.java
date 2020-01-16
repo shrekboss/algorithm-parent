@@ -3,7 +3,7 @@ package org.crayzer.leetcode.editor.en.disjoin_set;
 public class LeetCode_547_FriendCircles {
 
     class DisjoinSet {
-        private int count = 0;
+        private int count;
         private int[] parent;
 
         public DisjoinSet(int n) {
