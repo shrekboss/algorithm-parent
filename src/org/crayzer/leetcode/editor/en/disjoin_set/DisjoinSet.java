@@ -28,4 +28,8 @@ public class DisjoinSet {
         parent[rootP] = rootQ;
         count--;
     }
+
+    public int count() {
+        return count;
+    }
 }
