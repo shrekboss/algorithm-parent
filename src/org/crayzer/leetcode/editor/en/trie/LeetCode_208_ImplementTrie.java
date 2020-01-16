@@ -4,11 +4,11 @@ public class LeetCode_208_ImplementTrie {
 
     class TrieNode {
         private TrieNode[] links;
-        private final int R = 26;
         private boolean isLeaf;
+        private final int R = 26;
 
         public TrieNode() {
-            this.links = new TrieNode[R];
+            links = new TrieNode[R];
         }
 
         public boolean containsKey(char ch) {
@@ -23,12 +23,12 @@ public class LeetCode_208_ImplementTrie {
             return this.links[ch - 'a'];
         }
 
-        public void setLeaf() {
-            this.isLeaf = true;
-        }
-
         public boolean isLeaf() {
             return this.isLeaf;
+        }
+
+        public void setLeaf() {
+            this.isLeaf = true;
         }
     }
 
@@ -48,10 +48,9 @@ public class LeetCode_208_ImplementTrie {
          */
         public void insert(String word) {
             TrieNode node = root;
-            for (int i = 0; i < word.length(); i++) {
-                char currentChar = word.charAt(i);
-                if (!node.containsKey(currentChar)) node.put(currentChar, new TrieNode());
-                node = node.get(currentChar);
+            for (char ch : word.toCharArray()) {
+                if (!node.containsKey(ch)) node.put(ch, new TrieNode());
+                node = node.get(ch);
             }
             node.setLeaf();
         }
@@ -66,9 +65,8 @@ public class LeetCode_208_ImplementTrie {
 
         private TrieNode searchPrefix(String word) {
             TrieNode node = root;
-            for (int i = 0; i < word.length(); i++) {
-                char currentChar = word.charAt(i);
-                if (node.containsKey(currentChar)) node = node.get(currentChar);
+            for (char ch : word.toCharArray()) {
+                if (node.containsKey(ch)) node = node.get(ch);
                 else return null;
             }
             return node;
@@ -79,9 +77,8 @@ public class LeetCode_208_ImplementTrie {
          */
         public boolean startsWith(String prefix) {
             TrieNode node = root;
-            for (int i = 0; i < prefix.length(); i++) {
-                char currentChar = prefix.charAt(i);
-                if (node.containsKey(currentChar)) node = node.get(currentChar);
+            for (char ch : prefix.toCharArray()) {
+                if (node.containsKey(ch)) node = node.get(ch);
                 else return false;
             }
             return true;

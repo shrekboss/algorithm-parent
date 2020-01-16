@@ -7,31 +7,30 @@ import java.util.Set;
 
 public class LeetCode_212_WordSearch2 {
 
-    class TrieNode {
-        public String val;
-        public boolean isLeaf;
-        public TrieNode[] links = new TrieNode[26];
-
-        public TrieNode() {
-        }
-    }
-
-    class WordTrie {
-        public TrieNode root = new TrieNode();
-
-
-        public void insert(String word) {
-            TrieNode node = root;
-            for (char ch : word.toCharArray()) {
-                if (node.links[ch - 'a'] == null) node.links[ch - 'a'] = new TrieNode();
-                node = node.links[ch - 'a'];
-            }
-            node.isLeaf = true;
-            node.val = word;
-        }
-    }
-
     class Solution {
+        class TrieNode {
+            public String val;
+            public boolean isLeaf;
+            public TrieNode[] links = new TrieNode[26];
+
+            public TrieNode() {
+            }
+        }
+
+        class WordTrie {
+            public TrieNode root = new TrieNode();
+
+            public void insert(String word) {
+                TrieNode node = root;
+                for (char ch : word.toCharArray()) {
+                    if (node.links[ch - 'a'] == null) node.links[ch - 'a'] = new TrieNode();
+                    node = node.links[ch - 'a'];
+                }
+                node.isLeaf = true;
+                node.val = word;
+            }
+        }
+
         public List<String> findWords(char[][] board, String[] words) {
             WordTrie mytrie = new WordTrie();
             TrieNode root = mytrie.root;
@@ -54,9 +53,10 @@ public class LeetCode_212_WordSearch2 {
 
         private void find(char[][] board, boolean[][] visited, int i, int j, int m, int n, Set<String> resultSet, TrieNode cur) {
             if (i < 0 || i >= m || j < 0 || j >= n || visited[i][j]) return;
+
             cur = cur.links[board[i][j] - 'a'];
             visited[i][j] = true;
-            if (cur == null) {
+            if  (cur == null) {
                 visited[i][j] = false;
                 return;
             }
