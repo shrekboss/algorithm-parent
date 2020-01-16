@@ -5,42 +5,42 @@ public class LeetCode_208_ImplementTrie {
     class TrieNode {
         private TrieNode[] links;
         private final int R = 26;
-        private boolean isEnd;
+        private boolean isLeaf;
 
         public TrieNode() {
             this.links = new TrieNode[R];
         }
 
         public boolean containsKey(char ch) {
-            return links[ch - 'a'] != null;
+            return this.links[ch - 'a'] != null;
         }
 
         public void put(char ch, TrieNode node) {
-            links[ch - 'a'] = node;
+            this.links[ch - 'a'] = node;
         }
 
         public TrieNode get(char ch) {
-            return links[ch - 'a'];
+            return this.links[ch - 'a'];
         }
 
-        public boolean isEnd() {
-            return this.isEnd;
+        public void setLeaf() {
+            this.isLeaf = true;
         }
 
-        public void setEnd() {
-            this.isEnd = true;
+        public boolean isLeaf() {
+            return this.isLeaf;
         }
     }
 
     class Trie {
 
-        TrieNode root;
+        private TrieNode root;
 
         /**
          * Initialize your data structure here.
          */
         public Trie() {
-            root = new TrieNode();
+            this.root = new TrieNode();
         }
 
         /**
@@ -53,7 +53,7 @@ public class LeetCode_208_ImplementTrie {
                 if (!node.containsKey(currentChar)) node.put(currentChar, new TrieNode());
                 node = node.get(currentChar);
             }
-            node.setEnd();
+            node.setLeaf();
         }
 
         /**
@@ -61,7 +61,7 @@ public class LeetCode_208_ImplementTrie {
          */
         public boolean search(String word) {
             TrieNode node = searchPrefix(word);
-            return node != null && node.isEnd();
+            return node != null && node.isLeaf();
         }
 
         private TrieNode searchPrefix(String word) {
