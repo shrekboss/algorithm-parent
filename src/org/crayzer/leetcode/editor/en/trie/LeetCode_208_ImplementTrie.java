@@ -1,9 +1,40 @@
 package org.crayzer.leetcode.editor.en.trie;
 
 public class LeetCode_208_ImplementTrie {
+
+    class TrieNode {
+        private TrieNode[] links;
+        private final int R = 26;
+        private boolean isEnd;
+
+        public TrieNode() {
+            this.links = new TrieNode[R];
+        }
+
+        public boolean containsKey(char ch) {
+            return links[ch - 'a'] != null;
+        }
+
+        public void put(char ch, TrieNode node) {
+            links[ch - 'a'] = node;
+        }
+
+        public TrieNode get(char ch) {
+            return links[ch - 'a'];
+        }
+
+        public boolean isEnd() {
+            return this.isEnd;
+        }
+
+        public void setEnd() {
+            this.isEnd = true;
+        }
+    }
+
     class Trie {
 
-        private TrieNode root;
+        TrieNode root;
 
         /**
          * Initialize your data structure here.
@@ -19,8 +50,7 @@ public class LeetCode_208_ImplementTrie {
             TrieNode node = root;
             for (int i = 0; i < word.length(); i++) {
                 char currentChar = word.charAt(i);
-                if (!node.containsKey(currentChar))
-                    node.put(currentChar, new TrieNode());
+                if (!node.containsKey(currentChar)) node.put(currentChar, new TrieNode());
                 node = node.get(currentChar);
             }
             node.setEnd();
@@ -32,15 +62,13 @@ public class LeetCode_208_ImplementTrie {
         public boolean search(String word) {
             TrieNode node = searchPrefix(word);
             return node != null && node.isEnd();
-
         }
 
         private TrieNode searchPrefix(String word) {
             TrieNode node = root;
             for (int i = 0; i < word.length(); i++) {
                 char currentChar = word.charAt(i);
-                if (node.containsKey(currentChar))
-                    node = node.get(currentChar);
+                if (node.containsKey(currentChar)) node = node.get(currentChar);
                 else return null;
             }
             return node;
@@ -53,9 +81,8 @@ public class LeetCode_208_ImplementTrie {
             TrieNode node = root;
             for (int i = 0; i < prefix.length(); i++) {
                 char currentChar = prefix.charAt(i);
-                if (!node.containsKey(currentChar))
-                    return false;
-                node = node.get(currentChar);
+                if (node.containsKey(currentChar)) node = node.get(currentChar);
+                else return false;
             }
             return true;
         }
@@ -69,33 +96,3 @@ public class LeetCode_208_ImplementTrie {
  */
 }
 
-class TrieNode {
-
-    private TrieNode[] links;
-    private final int R = 26;
-    private boolean isEnd;
-
-    public TrieNode() {
-        links = new TrieNode[R];
-    }
-
-    public boolean containsKey(char ch) {
-        return links[ch - 'a'] != null;
-    }
-
-    public TrieNode get(char ch) {
-        return links[ch - 'a'];
-    }
-
-    public void put(char ch, TrieNode node) {
-        links[ch - 'a'] = node;
-    }
-
-    public void setEnd() {
-        this.isEnd = true;
-    }
-
-    public boolean isEnd() {
-        return this.isEnd;
-    }
-}
