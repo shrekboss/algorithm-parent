@@ -13,6 +13,20 @@ public class LeetCode_125_ValidPalindrome {
         System.out.println(solution.isPalindrome(testCase2));
     }
 
+    class Solution1 {
+        public boolean isPalindrome(String s) {
+            int i = 0, j = s.length() - 1;
+            while (i < j) {
+                while (i < j && !Character.isLetterOrDigit(s.charAt(i))) i++;
+                while (i < j && !Character.isLetterOrDigit(s.charAt(j))) j--;
+
+                if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) return false;
+                i++;j--;
+            }
+            return true;
+        }
+    }
+
     class Solution {
         public boolean isPalindrome(String s) {
             String filteredStr = filterNonNumberAndChar(s);
