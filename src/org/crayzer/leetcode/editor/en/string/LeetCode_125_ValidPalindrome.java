@@ -1,10 +1,10 @@
-package org.crayzer.leetcode.editor.en;
+package org.crayzer.leetcode.editor.en.string;
 
-public class ValidPalindrome {
+public class LeetCode_125_ValidPalindrome {
 
     public static void main(String[] args) {
 
-        Solution solution = new ValidPalindrome().new Solution();
+        Solution solution = new LeetCode_125_ValidPalindrome().new Solution();
 
         String testCase1 = "A man, a plan, a canal: Panama";
         System.out.println(solution.isPalindrome(testCase1));
