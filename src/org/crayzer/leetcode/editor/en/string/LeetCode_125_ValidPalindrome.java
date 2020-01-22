@@ -21,12 +21,10 @@ public class LeetCode_125_ValidPalindrome {
         }
 
         private String filterNonNumberAndChar(String s) {
-
             return s.replaceAll("[^a-zA-Z0-9]", "");
         }
 
         private String reverseString(String s) {
-
             return new StringBuilder(s).reverse().toString();
         }
     }
