@@ -5,10 +5,9 @@ import java.util.Map;
 
 public class LeetCode_146_LRUCache {
     class Node {
-        public Node prev, next;
         public int key, val;
-
-        public Node(int key, int val) {
+        public Node prev, next;
+        public Node (int key, int val) {
             this.key = key;
             this.val = val;
         }
@@ -55,12 +54,12 @@ public class LeetCode_146_LRUCache {
     class LRUCache {
 
         private DoubleList cache;
-        private int capacity;
+        private int cap;
         private Map<Integer, Node> map;
 
         public LRUCache(int capacity) {
             this.cache = new DoubleList();
-            this.capacity = capacity;
+            this.cap = capacity;
             this.map = new HashMap<>();
         }
 
@@ -78,7 +77,7 @@ public class LeetCode_146_LRUCache {
                 cache.addFirst(x);
                 map.put(key, x);
             } else {
-                if (this.capacity == cache.size()) {
+                if (cache.size() == cap) {
                     Node last = cache.removeLast();
                     map.remove(last.key);
                 }
