@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.deque;
+package org.crayzer.leetcode.editor.en.array;
 
 /**
  * describe: 设计循环双端队列
