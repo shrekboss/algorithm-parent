@@ -87,14 +87,15 @@ public class LeetCode_127_WordLadder {
 
     class Solution1 {
         public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+            if (!wordList.contains(endWord)) return 0;
             int len = beginWord.length();
-            HashMap<String, LinkedList<String>> allComboDict = new HashMap<>();
+            Map<String, List<String>> allComboDict = new HashMap<>();
 
             wordList.forEach(
                     word -> {
                         for (int i = 0; i < len; i++) {
                             String newWord = word.substring(0, i) + "*" + word.substring(i + 1, len);
-                            LinkedList<String> transformations = allComboDict.getOrDefault(newWord, new LinkedList<>());
+                            List<String> transformations = allComboDict.getOrDefault(newWord, new LinkedList<>());
                             transformations.add(word);
                             allComboDict.put(newWord, transformations);
                         }
@@ -104,7 +105,7 @@ public class LeetCode_127_WordLadder {
             Queue<Pair<String, Integer>> queue = new LinkedList<>();
             queue.add(new Pair<>(beginWord, 1));
 
-            HashMap<String, Boolean> visited = new HashMap<>();
+            Map<String, Boolean> visited = new HashMap<>();
             visited.put(beginWord, true);
 
             while (!queue.isEmpty()) {
@@ -116,7 +117,6 @@ public class LeetCode_127_WordLadder {
                     String newWord = word.substring(0, i) + "*" + word.substring(i + 1, len);
                     for (String adjacentWord : allComboDict.getOrDefault(newWord, new LinkedList<>())) {
                         if (adjacentWord.equals(endWord)) return level + 1;
-
                         if (!visited.containsKey(adjacentWord)) {
                             visited.put(adjacentWord, true);
                             queue.add(new Pair<>(adjacentWord, level + 1));
@@ -124,6 +124,7 @@ public class LeetCode_127_WordLadder {
                     }
                 }
             }
+
             return 0;
         }
     }
