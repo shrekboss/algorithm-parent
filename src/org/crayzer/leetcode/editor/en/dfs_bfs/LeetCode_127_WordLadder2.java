@@ -4,7 +4,16 @@ import java.util.*;
 
 public class LeetCode_127_WordLadder2 {
 
-    class Solution1 {
+    public static void main(String[] args) {
+        String beginWord = "hit";
+        String endWord = "cog";
+        // String[] wordList = {"hot", "dot", "dog", "lot", "log", "cog"};
+        String[] wordList = {"hot","dot","dog","lot","log","cog"};
+        Solution1 solution = new Solution1();
+        System.out.println(solution.findLadders(beginWord, endWord, Arrays.asList(wordList)));
+    }
+
+    static class Solution1 {
         public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
             // 结果集
             List<List<String>> res = new ArrayList<>();
