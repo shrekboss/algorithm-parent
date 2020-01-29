@@ -5,8 +5,7 @@ public class LeetCode_69_Sqrtx {
         public int mySqrt(int x) {
             if (x == 0) return x;
             /*
-             * 技巧点：
-             * long left = 0, right = x;
+             * 技巧点： right = x / 2 + 1;
              * */
             long left = 0, right = x / 2 + 1;
             while (left < right) {
