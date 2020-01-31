@@ -8,9 +8,9 @@ public class LeetCode_34_FindFirstAndLastPositionOfElementInSortedArray {
             int len = nums.length;
             int fistPosition = findFirstPosition(nums, target, len);
             if (fistPosition == -1) return new int[]{-1, -1};
-            int lastPostiton = findLastPosition(nums, target, len);
+            int lastPosititon = findLastPosition(nums, target, len);
 
-            return new int[]{fistPosition, lastPostiton};
+            return new int[]{fistPosition, lastPosititon};
         }
 
         private int findFirstPosition(int[] nums, int target, int len) {
