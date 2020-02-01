@@ -39,10 +39,8 @@ public class LeetCode_120_Triangle {
 
     class Solution1 {
         int row;
-        Integer[][] memo;
         public int minimumTotal(List<List<Integer>> triangle) {
             row = triangle.size();
-            memo = new Integer[row][row];
             return recursion(0, 0, triangle);
         }
 
