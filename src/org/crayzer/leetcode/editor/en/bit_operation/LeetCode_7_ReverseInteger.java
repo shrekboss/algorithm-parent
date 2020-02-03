@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en;
+package org.crayzer.leetcode.editor.en.bit_operation;
 
 public class LeetCode_7_ReverseInteger {
     class Solution {
