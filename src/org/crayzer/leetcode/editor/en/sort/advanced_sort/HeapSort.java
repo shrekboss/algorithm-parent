@@ -58,6 +58,4 @@ public class HeapSort {
             heapify(array, length, largest);
         }
     }
-
-
 }
