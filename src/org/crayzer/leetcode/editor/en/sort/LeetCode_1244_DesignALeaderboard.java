@@ -18,7 +18,7 @@ public class LeetCode_1244_DesignALeaderboard {
             ranking.put(playerId, ranking.getOrDefault(playerId, 0) + score);
         }
 
-        public int top(int K) { // 邪恶的代码... ...
+        public int top(int K) {
             return ranking.values()
                     .stream()
                     .sorted(Comparator.reverseOrder())
@@ -31,12 +31,4 @@ public class LeetCode_1244_DesignALeaderboard {
             ranking.remove(playerId);
         }
     }
-
-/**
- * Your Leaderboard object will be instantiated and called as such:
- * Leaderboard obj = new Leaderboard();
- * obj.addScore(playerId,score);
- * int param_2 = obj.top(K);
- * obj.reset(playerId);
- */
 }
