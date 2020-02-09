@@ -31,8 +31,8 @@ public class LeetCode_121_BestTimeToBuyAndSellStock {
      */
     class Solution {
         public int maxProfit(int[] prices) {
+            if (prices == null || prices.length == 0) return 0;
             int n = prices.length;
-            if (n == 0) return 0;
             int[][] dp = new int[n][2];
 
             for (int i = 0; i < n; i++) {
