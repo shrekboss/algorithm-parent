@@ -27,3 +27,5 @@ hs_err_pid*
 algorithm-practice.iml
 out/production/algorithm-practice/META-INF/
 
+/target
+
