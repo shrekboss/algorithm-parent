@@ -2,7 +2,7 @@ package org.crayzer.leetcode.editor.en.deque;
 
 /**
  * describe: 设计循环双端队列
- *
+ * <p>
  * MyCircularDeque(k)：构造函数,双端队列的大小为k。
  * insertFront()：将一个元素添加到双端队列头部。 如果操作成功返回 true。
  * insertLast()：将一个元素添加到双端队列尾部。如果操作成功返回 true。
@@ -15,46 +15,29 @@ package org.crayzer.leetcode.editor.en.deque;
  **/
 public class LeetCode_641_DesignCircularDeque {
 
-    class DoubleListNode {
-        DoubleListNode pre;
-        DoubleListNode next;
-        int val;
-        public DoubleListNode(int val) {
-            this.val = val;
-        }
-    }
-
     class MyCircularDeque {
-        private int size;
-        private int k;
 
-        private DoubleListNode head;
-        private DoubleListNode tail;
+        private int[] arr;
+        private int capacity;
+        private int front, rear;
 
         /**
          * Initialize your data structure here. Set the size of the deque to be k.
          */
         public MyCircularDeque(int k) {
-            this.head = new DoubleListNode(-1);
-            this.tail = new DoubleListNode(-1);
-            head.pre = tail;
-            tail.next = head;
-            this.k = k;
-            this.size = 0;
+            this.capacity = k + 1;
+            this.arr = new int[capacity];
+            this.front = 0;
+            this.rear = 0;
         }
 
         /**
          * Adds an item at the front of Deque. Return true if the operation is successful.
          */
         public boolean insertFront(int value) {
-            if (k == size) return false;
-
-            DoubleListNode node = new DoubleListNode(value);
-            node.next = head;
-            node.pre = head.pre;
-            head.pre.next = node;
-            head.pre = node;
-            size++;
+            if (isFull()) return false;
+            this.front = (front - 1 + capacity) % capacity;
+            this.arr[front] = value;
             return true;
         }
 
@@ -62,14 +45,9 @@ public class LeetCode_641_DesignCircularDeque {
          * Adds an item at the rear of Deque. Return true if the operation is successful.
          */
         public boolean insertLast(int value) {
-            if ( k == size) return false;
-
-            DoubleListNode node = new DoubleListNode(value);
-            node.pre = tail;
-            node.next = tail.next;
-            tail.next.pre = node;
-            tail.next = node;
-            size++;
+            if (isFull()) return false;
+            this.arr[rear] = value;
+            rear = (rear + 1) % capacity;
             return true;
         }
 
@@ -77,11 +55,8 @@ public class LeetCode_641_DesignCircularDeque {
          * Deletes an item from the front of Deque. Return true if the operation is successful.
          */
         public boolean deleteFront() {
-            if (size == 0) return false;
-
-            head.pre.pre.next = head;
-            head.pre = head.pre.pre;
-            size--;
+            if (isEmpty()) return false;
+            front = (front + 1) % capacity;
             return true;
         }
 
@@ -89,37 +64,40 @@ public class LeetCode_641_DesignCircularDeque {
          * Deletes an item from the rear of Deque. Return true if the operation is successful.
          */
         public boolean deleteLast() {
-            return false;
+            if (isEmpty()) return false;
+            rear = (rear - 1 + capacity) % capacity;
+            return true;
         }
 
         /**
          * Get the front item from the deque.
          */
         public int getFront() {
-            return 0;
+            if (isEmpty()) return -1;
+            return this.arr[front];
         }
 
         /**
          * Get the last item from the deque.
          */
         public int getRear() {
-            return 0;
+            if (isEmpty()) return -1;
+            return this.arr[(rear - 1 + capacity) % capacity];
         }
 
         /**
          * Checks whether the circular deque is empty or not.
          */
         public boolean isEmpty() {
-            return false;
+            return front == rear;
         }
 
         /**
          * Checks whether the circular deque is full or not.
          */
         public boolean isFull() {
-            return false;
+            return (rear + 1) % capacity == front;
         }
-    }
 
 /**
  * Your MyCircularDeque object will be instantiated and called as such:
@@ -133,4 +111,5 @@ public class LeetCode_641_DesignCircularDeque {
  * boolean param_7 = obj.isEmpty();
  * boolean param_8 = obj.isFull();
  */
+    }
 }
