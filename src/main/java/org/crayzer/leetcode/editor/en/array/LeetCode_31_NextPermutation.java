@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.divide_recall;
+package org.crayzer.leetcode.editor.en.array;
 
 public class LeetCode_31_NextPermutation {
 
