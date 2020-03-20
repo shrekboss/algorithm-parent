@@ -1,4 +1,4 @@
-package org.crayzer.algorithm.array;
+package org.crayzer.leetcode.editor.en.array;
 
 public class GenericArray<T> {
     private T[] data;

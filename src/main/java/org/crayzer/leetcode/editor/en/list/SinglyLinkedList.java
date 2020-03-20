@@ -1,4 +1,4 @@
-package org.crayzer.algorithm.linkedlist;
+package org.crayzer.leetcode.editor.en.list;
 
 
 /**
