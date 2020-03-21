@@ -2,7 +2,7 @@ package org.crayzer.leetcode.editor.en.deque;
 
 public class ArrayQueue {
     private String[] items;
-    private int n = 0;
+    private int n;
     private int head = 0;
     private int tail = 0;
 
