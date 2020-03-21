@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.divide_recall;
+package org.crayzer.leetcode.editor.en.bit_operation;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.dfs_bfs;
+package org.crayzer.leetcode.editor.en.tree;
 
 import java.util.LinkedList;
 import java.util.List;
