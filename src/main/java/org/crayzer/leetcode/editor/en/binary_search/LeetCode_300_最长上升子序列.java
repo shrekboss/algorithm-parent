@@ -1,6 +1,26 @@
 package org.crayzer.leetcode.editor.en.binary_search;
 
-public class LeetCode_300_LongestIncreasingSubsequence {
+import java.util.Arrays;
+
+public class LeetCode_300_最长上升子序列 {
+    class Solution2 {
+        public int lengthOfLIS(int[] nums) {
+            int[] dp = new int[nums.length];
+            int len = 0;
+            for (int num : nums) {
+                int i = Arrays.binarySearch(dp, 0, len, num);
+                if (i < 0) {
+                    i = -(i + 1);
+                }
+                dp[i] = num;
+                if (i == len) {
+                    len++;
+                }
+            }
+           return len;
+        }
+    }
+
     static class Solution {
         public int lengthOfLIS(int[] nums) {
             int len = nums.length;
