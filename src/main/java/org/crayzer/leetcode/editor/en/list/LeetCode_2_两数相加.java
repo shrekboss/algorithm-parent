@@ -2,7 +2,7 @@ package org.crayzer.leetcode.editor.en.list;
 
 import org.crayzer.leetcode.editor.en.ListNode;
 
-public class LeetCode_2_AddTwoNumbers {
+public class LeetCode_2_两数相加 {
     class Solution {
         public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
             ListNode soldier = new ListNode(0);
