@@ -3,7 +3,7 @@ package org.crayzer.leetcode.editor.en.dynamic_programming;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LeetCode_115_DistinctSubsequences {
+public class LeetCode_115_不同的子序列 {
 
     class Solution5 {
         public int numDistinct(String s, String t) {

@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.dynamic_programming;
 
-public class LeetCode_152_MaximumProductSubarray {
+public class LeetCode_152_乘积最大子数组 {
 
     class Solution {
         public int maxProduct(int[] nums) {
