@@ -2,6 +2,11 @@ package org.crayzer.leetcode.editor.en.geometry;
 
 public class LeetCode_892_三维形体的表面积 {
 
+    public static void main(String[] args) {
+        int i = 1;
+        System.out.println(i << 2);
+    }
+
     class Solution1 {
         public int surfaceArea(int[][] grid) {
             int[] dr = new int[]{0, 1, 0, -1}; // (0, 1)(1, 0)(0, -1)(-1, 0)
