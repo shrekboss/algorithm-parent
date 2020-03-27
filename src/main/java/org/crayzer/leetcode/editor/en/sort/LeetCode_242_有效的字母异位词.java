@@ -1,8 +1,8 @@
-package org.crayzer.leetcode.editor.en.hash;
+package org.crayzer.leetcode.editor.en.sort;
 
 import java.util.Arrays;
 
-public class LeetCode_242_ValidAnagram {
+public class LeetCode_242_有效的字母异位词 {
 
     /**
      * O(n)

@@ -1,8 +1,8 @@
-package org.crayzer.leetcode.editor.en.hash;
+package org.crayzer.leetcode.editor.en.sort;
 
 import java.util.*;
 
-public class LeetCode_49_GroupAnagrams {
+public class LeetCode_49_字母异位词分组 {
 
     /**
      * O(nk)
