@@ -2,9 +2,9 @@ package org.crayzer.algo.template.java;
 
 public class TrieTemplate {
     class TrieNode {
-        private TrieNode[] links;
-        private boolean isLeaf;
-        private final int R = 26;
+        public TrieNode[] links;
+        public boolean isLeaf;
+        public final int R = 26;
 
         public TrieNode() {
             this.links = new TrieNode[R];
@@ -20,14 +20,6 @@ public class TrieTemplate {
 
         public TrieNode get(char ch) {
             return links[ch - 'a'];
-        }
-
-        public void setLeaf() {
-            this.isLeaf = true;
-        }
-
-        public boolean isLeaf() {
-            return this.isLeaf;
         }
     }
 
@@ -51,7 +43,7 @@ public class TrieTemplate {
                 if (!node.containsKey(ch)) node.put(ch, new TrieNode());
                 node = node.get(ch);
             }
-            node.setLeaf();
+            node.isLeaf = true;
         }
 
         /**
@@ -59,7 +51,7 @@ public class TrieTemplate {
          */
         public boolean search(String word) {
             TrieNode node = searchPrefix(word);
-            return node != null && node.isLeaf();
+            return node != null && node.isLeaf;
         }
 
         private TrieNode searchPrefix(String word) {
