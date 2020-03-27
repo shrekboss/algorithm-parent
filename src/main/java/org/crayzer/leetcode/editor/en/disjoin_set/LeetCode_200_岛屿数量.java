@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.disjoin_set;
 
-public class LeetCode_200_NumberOfIslands {
+public class LeetCode_200_岛屿数量 {
     class Solution {
         class UnionFind {
             int count; // # of connected components

@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.disjoin_set;
 
-public class LeetCode_547_FriendCircles {
+public class LeetCode_547_朋友圈 {
 
     class Solution1 {
         public int findCircleNum(int[][] M) {
