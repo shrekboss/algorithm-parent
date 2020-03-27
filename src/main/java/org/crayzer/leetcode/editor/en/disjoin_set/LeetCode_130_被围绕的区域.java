@@ -1,6 +1,6 @@
-package org.crayzer.leetcode.editor.en.trie;
+package org.crayzer.leetcode.editor.en.disjoin_set;
 
-public class LeetCode_130_SurroundedRegions {
+public class LeetCode_130_被围绕的区域 {
 
     class Solution {
         int[] parent; // union find set
