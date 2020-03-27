@@ -3,7 +3,7 @@ package org.crayzer.leetcode.editor.en.bit_operation;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LeetCode_52_NQueens2 {
+public class LeetCode_52_N皇后2 {
 
     public static void main(String[] args) {
         System.out.println(Integer.toBinaryString((1 << 8) - 1));

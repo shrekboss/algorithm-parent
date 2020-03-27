@@ -2,7 +2,7 @@ package org.crayzer.leetcode.editor.en.bit_operation;
 
 import java.util.*;
 
-public class LeetCode_51_NQueens {
+public class LeetCode_51_N皇后 {
     static class Solution {
 
         private Set<Integer> cols = new HashSet<>();

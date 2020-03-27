@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.bit_operation;
 
-public class LeetCode_231_PowerOfTwo {
+public class LeetCode_231_2的幂 {
 
     class Solution1 {
         public boolean isPowerOfTwo(int n) {

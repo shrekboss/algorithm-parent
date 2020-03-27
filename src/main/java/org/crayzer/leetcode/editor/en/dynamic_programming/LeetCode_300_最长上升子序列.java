@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.binary_search;
+package org.crayzer.leetcode.editor.en.dynamic_programming;
 
 import java.util.Arrays;
 
