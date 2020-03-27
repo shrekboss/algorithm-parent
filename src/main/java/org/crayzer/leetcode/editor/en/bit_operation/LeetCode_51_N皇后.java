@@ -3,6 +3,52 @@ package org.crayzer.leetcode.editor.en.bit_operation;
 import java.util.*;
 
 public class LeetCode_51_N皇后 {
+    class Solution1 {
+        char[][] board;
+        boolean[] col;
+        boolean[] leftTop;
+        boolean[] rightTop;
+
+        public List<List<String>> solveNQueens(int n) {
+            List<List<String>> res = new ArrayList<>();
+            if (n == 0) {
+                return res;
+            }
+
+            board = new char[n][n];
+            col = new boolean[n];
+            leftTop = new boolean[2 * n];
+            rightTop = new boolean[2 * n];
+            helper(res, 0, n);
+            return res;
+        }
+
+        public void helper(List<List<String>> res, int row, int n) {
+            if (row >= n) {
+                List<String> list = new ArrayList<>();
+                for (char[] arr : board) {
+                    list.add(new String(arr));
+                }
+                res.add(list);
+                return;
+            }
+            Arrays.fill(board[row], '.');
+            for (int i = 0; i < n; i++) {
+                if (!col[i] && !leftTop[row - i + n] && !rightTop[row + i]) {
+                    board[row][i] = 'Q';
+                    col[i] = true;
+                    leftTop[row - i + n] = true;
+                    rightTop[row + i] = true;
+                    helper(res, row + 1, n);
+                    board[row][i] = '.';
+                    col[i] = false;
+                    leftTop[row - i + n] = false;
+                    rightTop[row + i] = false;
+                }
+            }
+        }
+    }
+
     static class Solution {
 
         private Set<Integer> cols = new HashSet<>();
