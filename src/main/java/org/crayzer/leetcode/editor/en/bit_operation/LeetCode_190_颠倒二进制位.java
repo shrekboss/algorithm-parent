@@ -1,8 +1,8 @@
 package org.crayzer.leetcode.editor.en.bit_operation;
 
-public class LeetCode_90_ReverseBits {
+public class LeetCode_190_颠倒二进制位 {
 
-    public class Solution1 {
+    class Solution {
         // you need treat n as an unsigned value
         public int reverseBits(int n) {
             int res = 0;

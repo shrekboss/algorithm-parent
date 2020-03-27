@@ -1,17 +1,12 @@
 package org.crayzer.leetcode.editor.en.bit_operation;
 
-public class LeetCode_9_PalindromeNumber {
-
+public class LeetCode_7_整数反转 {
     class Solution {
-        public boolean isPalindrome(int x) {
-            if (x < 0) return false;
-            int reverseX = reverse(x);
-            return x == reverseX;
-        }
-
-        private int reverse(int x) {
+        public int reverse(int x) {
+            int of = ((1 << 31) - 1) / 10;
             int res = 0;
             while (x != 0) {
+                if (Math.abs(res) > of) return 0;
                 int temp = x % 10;
                 res = res * 10 + temp;
                 x /= 10;

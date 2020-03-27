@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.bit_operation;
 
-public class LeetCode_191_NumberOf1Bits {
+public class LeetCode_191_位1的个数 {
 
     public class Solution1 {
         // you need to treat n as an unsigned value
