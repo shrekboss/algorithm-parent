@@ -1,4 +1,4 @@
-package org.crayzer.algo.template;
+package org.crayzer.algo.template.java;
 
 public class DisjointSetTemplate {
 
