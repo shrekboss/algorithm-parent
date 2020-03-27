@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class LeetCode_212_WordSearch2 {
+public class LeetCode_212_单词搜索2 {
 
     class Solution {
         class TrieNode {

@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.trie;
 
-public class LeetCode_208_ImplementTrie {
+public class LeetCode_208_实现Trie {
 
     class TrieNode {
         private TrieNode[] links;
