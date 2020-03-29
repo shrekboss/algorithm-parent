@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class LeetCode_56_MergeIntervals {
+public class LeetCode_56_合并区间 {
 
     class Interval {
         int start;

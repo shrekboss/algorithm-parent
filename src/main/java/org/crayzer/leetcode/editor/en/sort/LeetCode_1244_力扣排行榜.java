@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LeetCode_1244_DesignALeaderboard {
+public class LeetCode_1244_力扣排行榜 {
 
     class Leaderboard {
 
