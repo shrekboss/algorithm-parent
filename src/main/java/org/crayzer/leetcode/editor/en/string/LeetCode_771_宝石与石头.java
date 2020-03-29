@@ -3,7 +3,7 @@ package org.crayzer.leetcode.editor.en.string;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LeetCode_771_JewelsAndStones {
+public class LeetCode_771_宝石与石头 {
     class Solution1 {
         public int numJewelsInStones(String J, String S) {
             char[] Jc = J.toCharArray();

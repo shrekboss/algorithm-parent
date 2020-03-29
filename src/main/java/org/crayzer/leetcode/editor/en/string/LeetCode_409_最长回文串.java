@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_409_LongestPalindrome {
+public class LeetCode_409_最长回文串 {
     class Solution {
         public int longestPalindrome(String s) {
             // 26 + 26 = 52, AXCII a-z A_Z 不是连续的

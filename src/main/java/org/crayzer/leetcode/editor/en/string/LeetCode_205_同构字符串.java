@@ -2,7 +2,7 @@ package org.crayzer.leetcode.editor.en.string;
 
 import java.util.HashMap;
 
-public class LeetCode_205_IsomorphicStrings {
+public class LeetCode_205_同构字符串 {
 
     class Solution1 {
         public boolean isIsomorphic(String s, String t) {

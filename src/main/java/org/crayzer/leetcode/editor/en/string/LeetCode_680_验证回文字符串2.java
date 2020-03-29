@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_680_ValidPalindrome2 {
+public class LeetCode_680_验证回文字符串2 {
 
     class Solution1 {
         public boolean validPalindrome(String s) {

@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_14_LongestCommonPrefix {
+public class LeetCode_14_最长公共前缀 {
     class Solution {
         public String longestCommonPrefix(String[] strs) {
             if (strs.length == 0) return "";

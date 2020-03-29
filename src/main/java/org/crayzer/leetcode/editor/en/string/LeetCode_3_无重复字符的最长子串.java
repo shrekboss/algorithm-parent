@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_3_LongestSubstringWithoutRepeatingCharacters {
+public class LeetCode_3_无重复字符的最长子串 {
     class Solution {
         public int lengthOfLongestSubstring(String s) {
             int left = 0, right = 0, res = 0;

@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_541_ReverseString2 {
+public class LeetCode_541_反转字符串2 {
     class Solution {
         public String reverseStr(String s, int k) {
             int kk = 2 * k;

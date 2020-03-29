@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.string;
+package org.crayzer.leetcode.editor.en.dynamic_programming;
 
 public class LeetCode_10_RegularExpressionMatching {
     class Solution {

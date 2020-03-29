@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_344_ReverseString {
+public class LeetCode_344_反转字符串 {
     class Solution {
         public void reverseString(char[] s) {
             int len = s.length;

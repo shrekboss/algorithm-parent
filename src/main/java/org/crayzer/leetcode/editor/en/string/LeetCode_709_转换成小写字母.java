@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_709_ToLowerCase {
+public class LeetCode_709_转换成小写字母 {
     class Solution1 {
         public String toLowerCase(String str) {
             return str.toLowerCase();

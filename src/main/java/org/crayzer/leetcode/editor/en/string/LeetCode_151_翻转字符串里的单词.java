@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_151_ReverseWordsInAString {
+public class LeetCode_151_翻转字符串里的单词 {
 
     class Solution {
         public String reverseWords(String s) {

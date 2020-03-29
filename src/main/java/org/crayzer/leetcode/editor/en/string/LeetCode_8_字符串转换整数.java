@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_8_StringToInteger {
+public class LeetCode_8_字符串转换整数 {
 
     class Solution {
         public int myAtoi(String str) {

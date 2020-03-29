@@ -2,7 +2,7 @@ package org.crayzer.leetcode.editor.en.string;
 
 import java.util.HashMap;
 
-public class LeetCode_387_FirstUniqueCharacterInAString {
+public class LeetCode_387_字符串中的第一个唯一字符 {
     class Solution1 {
         public int firstUniqChar(String s) {
             int[] letters = new int[26];

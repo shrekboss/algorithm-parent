@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_76_MinimumWindowSubstring {
+public class LeetCode_76_最小覆盖子串 {
     public static void main(String[] args) {
         String s = "ADOBECODEBANC", t = "ABC";
         System.out.println(Solution.minWindow(s, t));

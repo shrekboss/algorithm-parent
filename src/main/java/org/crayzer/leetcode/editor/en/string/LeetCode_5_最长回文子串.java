@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_5_LongestPalindromicSubstring {
+public class LeetCode_5_最长回文子串 {
 
     class Solution1 {
         public String longestPalindrome(String s) {

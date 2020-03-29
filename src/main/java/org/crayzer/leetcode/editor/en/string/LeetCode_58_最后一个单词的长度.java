@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.string;
 
-public class LeetCode_58_LengthOfLastWord {
+public class LeetCode_58_最后一个单词的长度 {
     class Solution1 {
         public int lengthOfLastWord(String s) {
             int end = s.length() - 1;
