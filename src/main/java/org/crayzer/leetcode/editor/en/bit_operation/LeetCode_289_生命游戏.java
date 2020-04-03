@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.array;
+package org.crayzer.leetcode.editor.en.bit_operation;
 
 public class LeetCode_289_生命游戏 {
 
