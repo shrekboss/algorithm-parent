@@ -1,4 +1,4 @@
-package org.crayzer.leetcode.editor.en.list;
+package org.crayzer.leetcode.editor.en.linkedlist;
 
 import org.crayzer.leetcode.editor.en.ListNode;
 
