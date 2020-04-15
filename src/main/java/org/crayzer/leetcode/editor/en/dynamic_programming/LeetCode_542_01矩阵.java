@@ -12,7 +12,7 @@ public class LeetCode_542_01矩阵 {
 
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n; j++) {
-                    if (matrix[i][j] == 0) matrix[i][j] = 0;
+                    if (matrix[i][j] == 0) dis[i][j] = 0;
                     else {
                         int upCell = (i > 0) ? dis[i - 1][j] : range;
                         int leftCell = (j > 0) ? dis[i][j - 1] : range;
@@ -20,9 +20,9 @@ public class LeetCode_542_01矩阵 {
                     }
                 }
             }
-            for (int i = m - 1; i >= 0; i--) {
-                for (int j = n - 1; j >= 0; j--) {
-                    if (matrix[i][j] == 0) matrix[i][j] = 0;
+            for (int i = m - 1; i >= 0 ; i--) {
+                for (int j = n - 1; j >= 0 ; j--) {
+                    if (matrix[i][j] == 0) dis[i][j] = 0;
                     else {
                         int downCell = (i < m - 1) ? dis[i + 1][j] : range;
                         int rightCell = (j < n - 1) ? dis[i][j + 1] : range;
