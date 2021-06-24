@@ -2,14 +2,14 @@ package org.crayzer.leetcode.editor.en.dfs_bfs;
 
 import java.util.*;
 
-public class LeetCode_127_WordLadder2 {
+public class LeetCode_126_WordLadder2 {
 
     public static void main(String[] args) {
         String beginWord = "hit";
         String endWord = "cog";
         // String[] wordList = {"hot", "dot", "dog", "lot", "log", "cog"};
         String[] wordList = {"hot","dot","dog","lot","log","cog"};
-        Solution1 solution = new Solution1();
+        Solution solution = new Solution();
         System.out.println(solution.findLadders(beginWord, endWord, Arrays.asList(wordList)));
     }
 
@@ -98,7 +98,7 @@ public class LeetCode_127_WordLadder2 {
         }
     }
 
-    class Solution {
+    static class Solution {
         public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
             // 结果集
             List<List<String>> res = new ArrayList<>();
@@ -109,11 +109,11 @@ public class LeetCode_127_WordLadder2 {
             }
             // 已经访问过的单词集合：只找最短路径，所以之前出现过的单词不用出现在下一层
             Set<String> visited = new HashSet<>();
+            visited.add(beginWord);
             // 累积每一层的结果队列
             Queue<List<String>> queue = new LinkedList<>();
             List<String> list = new ArrayList<>(Arrays.asList(beginWord));
             queue.add(list);
-            visited.add(beginWord);
             // 是否到达符合条件的层：如果该层添加的某一单词符合目标单词，则说明截止该层的所有解为最短路径，停止循环
             boolean flag = false;
             while (!queue.isEmpty() && !flag) {

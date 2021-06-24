@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class LeetCode_18_4Sum {
+public class LeetCode_18_4数之和 {
 
     class Solution {
         public List<List<Integer>> fourSum(int[] nums, int target) {

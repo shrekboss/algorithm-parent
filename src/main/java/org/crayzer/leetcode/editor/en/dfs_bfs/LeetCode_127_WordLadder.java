@@ -1,7 +1,5 @@
 package org.crayzer.leetcode.editor.en.dfs_bfs;
 
-import javafx.util.Pair;
-
 import java.util.*;
 
 public class LeetCode_127_WordLadder {
@@ -9,123 +7,111 @@ public class LeetCode_127_WordLadder {
     public static void main(String[] args) {
         String beginWord = "hit";
         String endWord = "cog";
-        // String[] wordList = {"hot", "dot", "dog", "lot", "log", "cog"};
-        String[] wordList = {"hot", "dot", "dog", "lot", "log"};
-        Solution solution = new Solution();
+        String[] wordList = {"hot", "dot", "dog", "lot", "log", "cog"};
+//        String[] wordList = {"hot", "dot", "dog", "lot", "log"};
+        Solution1 solution = new Solution1();
         System.out.println(solution.ladderLength(beginWord, endWord, Arrays.asList(wordList)));
     }
 
     static class Solution {
-        private int len;
-        private HashMap<String, LinkedList<String>> allComboDict;
-
-        public Solution() {
-            this.len = 0;
-            this.allComboDict = new HashMap<>();
-        }
-
         public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-            if (!wordList.contains(endWord)) {
-                return 0;
-            }
+            Set<String> wordSet = new HashSet<>(wordList);
+            if (!wordSet.contains(endWord)) return 0;
 
-            this.len = beginWord.length();
+            wordSet.remove(beginWord);
 
-            wordList.forEach(
-                    word -> {
-                        for (int i = 0; i < len; i++) {
-                            String newWord = word.substring(0, i) + "*" + word.substring(i + 1, len);
-                            LinkedList<String> transformations = this.allComboDict.getOrDefault(newWord, new LinkedList<>());
-                            transformations.add(word);
-                            this.allComboDict.put(newWord, transformations);
-                        }
+            Queue<String> queue = new LinkedList<>();
+            queue.add(beginWord);
+            Set<String> visited = new HashSet<>();
+            visited.add(beginWord);
+
+            int step = 1;
+            while  (!queue.isEmpty()) {
+                int size = queue.size();
+                for (int i = 0; i < size; i++) {
+                    String curWord = queue.poll();
+                    if (changeWordEveryOneLetter(curWord, endWord, queue, visited, wordSet)) {
+                        return step + 1;
                     }
-            );
-
-            Queue<Pair<String, Integer>> beginQueue = new LinkedList<>();
-            Queue<Pair<String, Integer>> endQueue = new LinkedList<>();
-            beginQueue.add(new Pair<>(beginWord, 1));
-            endQueue.add(new Pair<>(endWord, 1));
-
-            HashMap<String, Integer> beginVisited = new HashMap<>();
-            HashMap<String, Integer> endVisited = new HashMap<>();
-            beginVisited.put(beginWord, 1);
-            endVisited.put(endWord, 1);
-
-            while (!beginQueue.isEmpty() && !endQueue.isEmpty()) {
-                int ans = visitedWordNode(beginQueue, beginVisited, endVisited);
-                if (ans > -1) return ans;
-
-                ans = visitedWordNode(endQueue, endVisited, beginVisited);
-                if (ans > -1) return ans;
+                }
+                step++;
             }
-
             return 0;
         }
 
-        private int visitedWordNode(Queue<Pair<String, Integer>> queue,
-                                    HashMap<String, Integer> visited,
-                                    HashMap<String, Integer> otherVisited) {
-            Pair<String, Integer> node = queue.remove();
-            String word = node.getKey();
-            int level = node.getValue();
-
-            for (int i = 0; i < len; i++) {
-                String newWord = word.substring(0, i) + "*" + word.substring(i + 1, len);
-                for (String adjacentWord : this.allComboDict.getOrDefault(newWord, new LinkedList<>())) {
-                    if (otherVisited.containsKey(adjacentWord)) return level + otherVisited.get(adjacentWord);
-                    if (!visited.containsKey(adjacentWord)) {
-                        visited.put(adjacentWord, level + 1);
-                        queue.add(new Pair<>(adjacentWord, level + 1));
+        private boolean changeWordEveryOneLetter(String curWord, String endWord, Queue<String> queue, Set<String> visited, Set<String> wordSet) {
+            char[] chars = curWord.toCharArray();
+            for (int i = 0; i < chars.length; i++) {
+                char originChar = chars[i];
+                for (char ch = 'a'; ch <= 'z'; ch++) {
+                    if (originChar == ch) continue;
+                    chars[i] = ch;
+                    String nextWord = String.valueOf(chars);
+                    if (wordSet.contains(nextWord)) {
+                        if (endWord.equals(nextWord)) return true;
+                        if (!visited.contains(nextWord)) {
+                            queue.add(nextWord);
+                            visited.add(nextWord);
+                        }
                     }
                 }
+                chars[i] = originChar;
             }
-            return -1;
+            return false;
         }
-
     }
 
-    class Solution1 {
+    static class Solution1 {
         public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-            if (!wordList.contains(endWord)) return 0;
-            int len = beginWord.length();
-            Map<String, List<String>> allComboDict = new HashMap<>();
+            Set<String> wordSet = new HashSet<>(wordList);
+            if (!wordSet.contains(endWord)) return 0;
 
-            wordList.forEach(
-                    word -> {
-                        for (int i = 0; i < len; i++) {
-                            String newWord = word.substring(0, i) + "*" + word.substring(i + 1, len);
-                            List<String> transformations = allComboDict.getOrDefault(newWord, new LinkedList<>());
-                            transformations.add(word);
-                            allComboDict.put(newWord, transformations);
-                        }
+
+            Set<String> beginVisited = new HashSet<>();
+            Set<String> endVisited = new HashSet<>();
+            beginVisited.add(beginWord);
+            endVisited.add(endWord);
+            Set<String> visited = new HashSet<>();
+
+            int step = 1;
+            while  (!beginVisited.isEmpty() && !endVisited.isEmpty()) {
+                if (beginVisited.size() > endVisited.size()) {
+                    Set<String> temp = beginVisited;
+                    beginVisited = endVisited;
+                    endVisited = temp;
+                }
+
+                Set<String> nextLevelVisited = new HashSet<>();
+                for (String word : beginVisited) {
+                    if (changeWordEveryOneLetter(word, endVisited, visited, wordSet, nextLevelVisited)) {
+                        return step + 1;
                     }
-            );
+                }
+                beginVisited = nextLevelVisited;
+                step++;
+            }
+            return 0;
+        }
 
-            Queue<Pair<String, Integer>> queue = new LinkedList<>();
-            queue.add(new Pair<>(beginWord, 1));
-
-            Map<String, Boolean> visited = new HashMap<>();
-            visited.put(beginWord, true);
-
-            while (!queue.isEmpty()) {
-                Pair<String, Integer> node = queue.remove();
-                String word = node.getKey();
-                int level = node.getValue();
-
-                for (int i = 0; i < len; i++) {
-                    String newWord = word.substring(0, i) + "*" + word.substring(i + 1, len);
-                    for (String adjacentWord : allComboDict.getOrDefault(newWord, new LinkedList<>())) {
-                        if (adjacentWord.equals(endWord)) return level + 1;
-                        if (!visited.containsKey(adjacentWord)) {
-                            visited.put(adjacentWord, true);
-                            queue.add(new Pair<>(adjacentWord, level + 1));
+        private boolean changeWordEveryOneLetter(String curWord, Set<String> endVisited, Set<String> visited, Set<String> wordSet, Set<String> nextLevelVisited) {
+            char[] chars = curWord.toCharArray();
+            for (int i = 0; i < chars.length; i++) {
+                char originChar = chars[i];
+                for (char ch = 'a'; ch <= 'z'; ch++) {
+                    if (originChar == ch) continue;
+                    chars[i] = ch;
+                    String nextWord = String.valueOf(chars);
+                    if (wordSet.contains(nextWord)) {
+                        if (endVisited.contains(nextWord)) return true;
+                        if (!visited.contains(nextWord)) {
+                            nextLevelVisited.add(nextWord);
+                            visited.add(nextWord);
                         }
                     }
                 }
+                chars[i] = originChar;
             }
-
-            return 0;
+            return false;
         }
     }
 }

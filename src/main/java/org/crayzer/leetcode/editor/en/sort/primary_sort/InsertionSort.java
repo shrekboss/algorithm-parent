@@ -10,13 +10,12 @@ public class InsertionSort {
         }
     }
 
-    public static void insertionSort(int[] nums) {
-        int len = nums.length;
-        int preIndex, current;
+    private static void insertionSort(int[] nums) {
+        int n = nums.length;
 
-        for (int i = 1; i < len; i++) {
-            preIndex = i - 1;
-            current = nums[i];
+        for (int i = 1; i < n; i++) {
+            int preIndex = i - 1;
+            int current = nums[i];
 
             while (preIndex >= 0 && nums[preIndex] > current) {
                 nums[preIndex + 1] = nums[preIndex];

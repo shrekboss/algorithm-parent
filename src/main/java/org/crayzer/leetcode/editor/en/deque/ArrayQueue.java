@@ -1,5 +1,7 @@
 package org.crayzer.leetcode.editor.en.deque;
 
+import java.util.HashMap;
+
 public class ArrayQueue {
     private String[] items;
     private int n;
@@ -9,6 +11,7 @@ public class ArrayQueue {
     public ArrayQueue(int capacity) {
         items = new String[capacity];
         this.n = capacity;
+        new HashMap<>().values();
     }
 
     public boolean enqueue(String item) {

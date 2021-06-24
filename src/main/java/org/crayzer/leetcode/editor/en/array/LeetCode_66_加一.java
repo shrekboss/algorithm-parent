@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.array;
 
-public class LeetCode_66_Plus_One {
+public class LeetCode_66_加一 {
     public int[] plusOne(int[] digits) {
 
         for (int i = digits.length - 1; i >= 0 ; i--) {

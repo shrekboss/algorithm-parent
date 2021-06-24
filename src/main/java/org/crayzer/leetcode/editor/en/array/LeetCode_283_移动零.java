@@ -1,6 +1,6 @@
 package org.crayzer.leetcode.editor.en.array;
 
-public class LeetCode_283_MoveZeroes {
+public class LeetCode_283_移动零 {
 
     class Solution2 {
         public void moveZeroes(int[] nums) {
